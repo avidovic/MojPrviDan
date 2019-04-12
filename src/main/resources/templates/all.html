@@ -1,4 +1,4 @@
-<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
@@ -16,9 +16,9 @@
 <h1>Popis radnika i njihovih zanimanja</h1>
 <ul class="list-group" th:each="radnik : ${lista}">
     <li class="list-group-item" th-text="${radnik.name}">
-        <ul class="list-group" th:each="zanimanje : ${radnik.zanimanja}">
-            <li class="list-group-item" th-text="${zanimanje}"></li>
-        </ul>
+        <ol class="list-group" th:each="zanimanje : ${radnik.zanimanja}">Zanimanja:
+            <li class="list-group-item" th-text="${zanimanje.name}"></li>
+        </ol>
     </li>
 
 </ul>
